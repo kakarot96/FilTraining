@@ -14,6 +14,12 @@ public class FirstController {
 	public String showHello(){
 		return "hello controller";
 	}
+
+	@RequestMapping(value="/log2",method=RequestMethod.GET)
+	@ResponseBody
+	public String showBye(){
+		return "Bye controller";
+	}
 	
 	
 }
