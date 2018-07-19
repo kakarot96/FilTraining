@@ -4,12 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Login Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-
-index file
-
-
+Hello ${errorMessage}
 </body>
 </html>
