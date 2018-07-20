@@ -12,7 +12,7 @@ public class LoginController {
 
 	
 
-		LoginService loginService =new LoginService();
+		LoginService loginService =new LoginServiceImp1();
 		@RequestMapping(value="/log",method=RequestMethod.GET)
 		public String showHello(){
 			return "welcome";
