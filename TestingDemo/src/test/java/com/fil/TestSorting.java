@@ -41,6 +41,7 @@ public class TestSorting {
 		
 		
 	}
+	// NullPointerException expected test
 	@Test(expected=NullPointerException.class)
 	public void test2() {
 		SortingClass sort=new SortingClass();
@@ -49,8 +50,9 @@ public class TestSorting {
 		System.out.println(result);
 		assert(result.equals("aabbcddf"));
 		
-	}	
+	}
 	
+	// Timeout expected test
 	@Test(timeout=1)
 	public void test3() {
 		SortingClass sort=new SortingClass();
