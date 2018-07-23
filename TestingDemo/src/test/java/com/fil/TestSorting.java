@@ -41,6 +41,16 @@ public class TestSorting {
 		
 		
 	}
+	@Test(expected=NullPointerException.class)
+	public void test2() {
+		SortingClass sort=new SortingClass();
+		String str= "ababdfdc";
+		String result=sort.sortString(str);
+		System.out.println(result);
+		assert(result.equals("aabbcddf"));
+		
+	}	
+	
 }
 
 
