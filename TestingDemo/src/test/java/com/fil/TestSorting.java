@@ -51,6 +51,20 @@ public class TestSorting {
 		
 	}	
 	
+	@Test(timeout=1)
+	public void test3() {
+		SortingClass sort=new SortingClass();
+		String str= "abacbdfd";
+		String result=sort.sortString(str);
+		for(int i=0;i<1000000;i++){
+		str+="t";
+		result=sort.sortString(str);
+		System.out.println(result);
+		assert(str.equals(str));
+		
+		}
+	}
+	
 }
 
 
