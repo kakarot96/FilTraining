@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock.WriteLock;
 public class Box {
 
 	int length,breadth,height;
-	
+	static int temp;
 	ReentrantReadWriteLock lock=new ReentrantReadWriteLock();
 
 	public Box(int length, int breadth, int height) {
