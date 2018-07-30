@@ -1,5 +1,7 @@
 package com.fil;
 
+import java.util.Arrays;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -25,15 +27,30 @@ public class MainDILogin {
 //		System.out.println(outer1.getInner()==outer2.getInner());
 		
 		
+		// Dependency Injection
+		
+//		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
+//		context.register(BeansConfiguration.class);
+//		context.refresh();
+//		LoginService obj=context.getBean(LoginService.class);
+//		System.out.println(obj.checkValidation("kunal", "kunal")+obj.getClass().toString());
+//		System.out.println(obj);
 		
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 		context.register(BeansConfiguration.class);
 		context.refresh();
-		LoginService obj=context.getBean(LoginService.class);
-		System.out.println(obj.checkValidation("kunal", "kunal")+obj.getClass().toString());
-		System.out.println(obj);
 		
+		String[] beans=context.getBeanDefinitionNames();
+		System.out.println(Arrays.toString(beans));
 		
+		LibService libService= (LibService)context.getBean(LibService.class);
+		LibLogAspect libLogAspect=context.getBean(LibLogAspect.class);
+		System.out.println(libService);
+		System.out.println(libLogAspect);
+		
+		libService.getBooks();
+		libService.getStudent();
+		libService.getIssue("java", "kunal");
 		
 	}
 
